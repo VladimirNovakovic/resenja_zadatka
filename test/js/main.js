@@ -112,6 +112,7 @@
             }
             var objectId2;
             var niz2;
+            exit:
             for(var i= 0,o=0;i<data.length;i++){
 
                 if(brojPredlozenihPrijatelja<2) {prp.html('Nema predlozenih prijatelja');break;}
@@ -121,6 +122,10 @@
                 var brojac=0;
                 for(var j=0;j<niz.length;j++){
                     for(var t=0;t<niz2.length;t++){
+                        for(var trazeniBroj=0;trazeniBroj<niz.length;trazeniBroj++)
+                        {
+                            if(niz[trazeniBroj]===(i+1)) continue exit;
+                        }
                         if(niz[j]===niz2[t]) {brojac++;}
                         if(brojac>1){
                             ime=objectId2.firstName;
